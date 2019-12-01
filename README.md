@@ -7,8 +7,8 @@ Database: Java Collection Framework as In Memory Database
 
 
 How to run:<br>
-./mvnw clean install<br>
-java -jar target/money-transfer-app-cf-1.0-runner.jar <br><br>
+`./mvnw clean install`<br>
+`java -jar target/money-transfer-app-cf-1.0-runner.jar` <br><br>
 
 
 <h1>Wallet Resources:</h1>
