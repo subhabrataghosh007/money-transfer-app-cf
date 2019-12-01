@@ -2,13 +2,13 @@
 money-transfer-app with Java Collection Framework as In memory storage
 
 
-Framework: Quarkus
+Framework: Quarkus<br>
 Database: Java Collection Framework as In Memory Database
 
 
-How to run:
-./mvnw clean install
-java -jar target/money-transfer-app-cf-1.0-runner.jar 
+How to run:<br>
+./mvnw clean install<br>
+java -jar target/money-transfer-app-cf-1.0-runner.jar <br><br>
 
 
 <b>Wallet Resources</b>:
