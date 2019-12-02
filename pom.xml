@@ -63,6 +63,12 @@
 			<artifactId>jersey-bean-validation</artifactId>
 			<version>${validation.version}</version>
 		</dependency>
+		
+		<!--  Swagger -->
+		<dependency>
+			<groupId>io.quarkus</groupId>
+			<artifactId>quarkus-smallrye-openapi</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>

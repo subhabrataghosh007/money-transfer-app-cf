@@ -46,9 +46,9 @@ public class TransactionResource {
 	}
 	
 	@GET
-	@Path("/transaction/{id}/sender")
+	@Path("/transaction/{sender}/sender")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getTransactionBySender(@PathParam(value = "id") String sender) {
+	public Response getTransactionBySender(@PathParam(value = "sender") String sender) {
 		
 		List<MoneyTransferModel> transactions = transactionService.getTransactionsBySender(sender);
 		return Response.ok(transactions).build();

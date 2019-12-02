@@ -13,7 +13,7 @@ import io.restassured.http.ContentType;;
 @QuarkusTest
 public class WalletResourceTest {
 
-	private static String BASE_URL = "/v1/accounts";
+	private static String BASE_URL = "/v1/wallets";
 	private static String BODY_HAPPY_PATH = "{\"phoneNumber\": \"9832799828\",\"balance\": 1000}";
 	private static String BODY_BAD_REQUEST_PHONE_NON_NUMERIC = "{\"phoneNumber\": \"9832799828SS\",\"balance\": 1000}";
 	private static String BODY_BAD_REQUEST_PHONE_LESS_10 = "{\"phoneNumber\": \"983279982\",\"balance\": 1000}";
@@ -37,7 +37,7 @@ public class WalletResourceTest {
           .accept(ContentType.JSON)
           .contentType(ContentType.JSON)
           .body(BODY_HAPPY_PATH)
-          .post(BASE_URL+"/account")
+          .post(BASE_URL+"/wallet")
           .then()
              .statusCode(201);
     }
@@ -50,7 +50,7 @@ public class WalletResourceTest {
           .accept(ContentType.JSON)
           .contentType(ContentType.JSON)
           .body(BODY_BAD_REQUEST_PHONE_NON_NUMERIC)
-          .post(BASE_URL+"/account")
+          .post(BASE_URL+"/wallet")
           .then()
              .statusCode(400)
              .body("errorMessage", containsString(MOBILE_VALIDATION));
@@ -64,7 +64,7 @@ public class WalletResourceTest {
           .accept(ContentType.JSON)
           .contentType(ContentType.JSON)
           .body(BODY_BAD_REQUEST_PHONE_LESS_10)
-          .post(BASE_URL+"/account")
+          .post(BASE_URL+"/wallet")
           .then()
              .statusCode(400)
              .body("errorMessage", containsString(MOBILE_VALIDATION));
@@ -78,7 +78,7 @@ public class WalletResourceTest {
           .accept(ContentType.JSON)
           .contentType(ContentType.JSON)
           .body(BODY_BAD_REQUEST_PHONE_GREATER_10)
-          .post(BASE_URL+"/account")
+          .post(BASE_URL+"/wallet")
           .then()
              .statusCode(400)
              .body("errorMessage", containsString(MOBILE_VALIDATION));
@@ -92,7 +92,7 @@ public class WalletResourceTest {
           .accept(ContentType.JSON)
           .contentType(ContentType.JSON)
           .body(BODY_BAD_REQUEST_BALANCE_ZERO)
-          .post(BASE_URL+"/account")
+          .post(BASE_URL+"/wallet")
           .then()
              .statusCode(400)
              .body("errorMessage", containsString(AMOUNT_ERROR));
@@ -106,7 +106,7 @@ public class WalletResourceTest {
           .accept(ContentType.JSON)
           .contentType(ContentType.JSON)
           .body(BODY_BAD_REQUEST_BALANCE_NEGATIVE)
-          .post(BASE_URL+"/account")
+          .post(BASE_URL+"/wallet")
           .then()
              .statusCode(400)
              .body("errorMessage", containsString(AMOUNT_ERROR));
