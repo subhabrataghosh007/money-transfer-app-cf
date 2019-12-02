@@ -73,10 +73,10 @@ Sample Success Response:
 ```
 
 
-PUT "<i>/wallet/addmoney</i>"
+PUT "<i>/wallet/addmoney/{phoneNumber}</i>"
 -
 Add some additional money to a specific wallet.
-
+`http://localhost:8080/v1/wallets/wallet/addmoney/9832799830`
 Sample Request:
 ```
 {
