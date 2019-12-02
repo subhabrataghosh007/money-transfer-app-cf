@@ -6,10 +6,12 @@ Framework: Quarkus<br>
 Database: Java Collection Framework as In Memory Database
 
 
-How to run:<br>
+<h2>How to run:</h2>
 `./mvnw clean install`<br>
 `java -jar target/money-transfer-app-cf-1.0-runner.jar` <br><br>
 
+<h2>SWAGGER URL</h2>
+http://localhost:8080/swagger-ui/
 
 <h1>Wallet Resources:</h1>
 
