@@ -12,4 +12,15 @@ public class Utility {
 			return false;
 		}
 	}
+	
+	public static boolean isEmpty(String str) {
+		
+		if (str == null) {
+			return true;
+		} else if ("".equals(str.trim())) {
+			return true;
+		}  else {
+			return false;
+		}
+	}
 }

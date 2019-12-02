@@ -26,8 +26,8 @@ public class WalletServiceImpl implements WalletService {
 		return fundRepository.addAccount(account);
 	}
 
-	public Wallet addMoney(Wallet account) {
-		account = fundRepository.addMoney(account);
+	public Wallet addMoney(Wallet account, String phoneNumber) {
+		account = fundRepository.addMoney(account, phoneNumber);
 		return account;
 	}
 }

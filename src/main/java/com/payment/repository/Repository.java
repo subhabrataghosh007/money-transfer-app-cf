@@ -46,14 +46,14 @@ public class Repository {
 		return wallet;
 	}
 
-	public Wallet addMoney(Wallet wallet) {
+	public Wallet addMoney(Wallet wallet, String phoneNumber) {
 
-		Wallet storedWallet = Optional.ofNullable(wallets.get(wallet.getPhoneNumber()))
+		Wallet storedWallet = Optional.ofNullable(wallets.get(phoneNumber))
 				.orElseThrow(() -> new NotFoundException(PHONE_NUMBER_NOT_FOUND.getMessage()));
 		
 		wallet.setBalance(storedWallet.getBalance().add(wallet.getBalance()));
-		wallets.put(wallet.getPhoneNumber(), wallet);
-		wallet.setRespnseMessage(wallet.getBalance().toString()+ADD_MONEY_SUCCESS.getMessage()+wallet.getPhoneNumber());
+		wallets.put(phoneNumber, wallet);
+		wallet.setRespnseMessage(wallet.getBalance().toString()+ADD_MONEY_SUCCESS.getMessage()+phoneNumber);
 		
 		return wallet;
 	}
