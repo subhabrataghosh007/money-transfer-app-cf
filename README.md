@@ -9,7 +9,7 @@ Database: Java Collection Framework as In Memory Database
 <h2>How to run:</h2>
 
 ```
-./mvnw clean install<br>
+./mvnw clean install
 
 java -jar target/money-transfer-app-h2-1.0-runner.jar
 ```
